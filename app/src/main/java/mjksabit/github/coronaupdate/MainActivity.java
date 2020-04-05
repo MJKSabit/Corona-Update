@@ -51,7 +51,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Internet Thread
-        dataLoaderThread = new Thread( (Runnable) () -> dataProvider = new ApplicationDataProvider());
+        dataLoaderThread = new Thread( (Runnable) () -> {
+            runOnUiThread(() -> messageShower(R.id.msg_connecting));
+
+            dataProvider = new ApplicationDataProvider();
+
+            runOnUiThread(() -> messageShower(R.id.msg_live));
+
+            //messageShower(R.id.msg_live);
+            runOnUiThread(() -> showCountryData(null));
+        });
         dataLoaderThread.start();
 
 //        dataProvider = new ApplicationDataProvider();
@@ -98,14 +107,5 @@ public class MainActivity extends AppCompatActivity {
 //        if(dataProvider.dataMap!=null) country.putExtra("list", dataProvider.dataMap.keySet().toArray());
 //        else country.putExtra("list", dataProvider.dataMap.keySet().toArray();
         startActivity(country);
-
-        String allCities = "";
-
-        for(Object cities : dataProvider.dataMap.keySet().toArray()) {
-            allCities += (String) cities + "\", \"";
-        }
-
-        Log.v("CITIES", allCities);
-
     }
 }
