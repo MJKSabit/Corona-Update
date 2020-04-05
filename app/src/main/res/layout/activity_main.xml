@@ -12,6 +12,7 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/search_120px"
+        android:onClick="showCountryData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,6 +31,7 @@
         android:ems="10"
         android:hint="Country Name"
         android:inputType="textPersonName"
+        android:text="bangladesh"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_search"
         app:layout_constraintEnd_toStartOf="@+id/btn_search"
         app:layout_constraintStart_toEndOf="@+id/btn_country_list" />
@@ -115,6 +117,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="10dp"
@@ -256,10 +259,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:autoText="false"
             android:gravity="clip_vertical|right"
             android:text="Stay Home, Stay Safe"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_country_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="Bangladesh"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
