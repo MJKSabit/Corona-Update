@@ -13,4 +13,4 @@ The app gets data from the Internet.
 To avoid unneccesary complexity, I didn't add an other facilities like auto refresh.
 You can refresh manually by closing and opening the app again.
 
-APK Link: [Corona (CoVID-19) Update](https://github.com/MJKSabit/Corona-Update/releases/download/v0.9/Corona.CoVID-19.Update.apk)
+APK Link: [Corona (CoVID-19) Update](https://github.com/MJKSabit/Corona-Update/releases/download/v0.9/Corona.CoVID-19.Update.Beta.Release.apk)
