@@ -1,5 +1,6 @@
 package mjksabit.github.coronaupdate;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -17,6 +18,7 @@ public class NetworkDataReceiver {
         try {
             dataUrl = new URL("https://coronavirus-19-api.herokuapp.com/countries");
             connection = dataUrl.openConnection();
+            connection.setConnectTimeout(10000);
         } catch (IOException e) {
 
         }
