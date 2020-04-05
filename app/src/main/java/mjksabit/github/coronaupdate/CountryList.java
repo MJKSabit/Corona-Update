@@ -2,8 +2,11 @@ package mjksabit.github.coronaupdate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -13,7 +16,13 @@ import java.util.List;
 
 public class CountryList extends AppCompatActivity {
 
+    private void sendAndExit(String cityName) {
 
+        Intent send = new Intent();
+        send.putExtra("cityname", cityName);
+        setResult(RESULT_OK, send);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +35,12 @@ public class CountryList extends AppCompatActivity {
         Collections.sort(list);
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list));
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                sendAndExit(list.get(position));
+            }
+        });
     }
 }

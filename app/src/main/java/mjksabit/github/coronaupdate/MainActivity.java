@@ -69,6 +69,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Log.v("OnActivityResult", "Were this");
+
+        // Check that it is the SecondActivity with an OK result
+        if (resultCode == RESULT_OK) {
+            String cityName = data.getExtras().getString("cityname");
+            updateData(cityName);
+        }
+    }
+
 
     private void textViewUpdater(int ResourceId, String data) {
         TextView temp = (TextView) findViewById(ResourceId);
@@ -106,6 +119,6 @@ public class MainActivity extends AppCompatActivity {
 
 //        if(dataProvider.dataMap!=null) country.putExtra("list", dataProvider.dataMap.keySet().toArray());
 //        else country.putExtra("list", dataProvider.dataMap.keySet().toArray();
-        startActivity(country);
+        startActivityForResult(country, 0);
     }
 }
