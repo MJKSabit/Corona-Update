@@ -1,5 +1,6 @@
 # Corona (CoVID-19) Update
-[Intro Video ](https://youtu.be/TznE_pFj-_w)  
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)  
+### [![YouTube](http://icons.iconarchive.com/icons/dakirby309/simply-styled/16/YouTube-icon.png) Intro Video ](https://youtu.be/TznE_pFj-_w)  
 
 is an Android App which shows current situation of corona all over the world.
   
